@@ -1,9 +1,19 @@
 import schedule
 import time
+import git
 
 def test():
-    print('hello there')
+    with open('main.js', 'r') as file:
+        data = file.read()
+        file.close()
 
+    print('esto')
+    repo = git.cmd.Git('https://github.com/Henrikkittang/git_update')
+    repo.pull()
+
+    with open('main.js', 'w') as file:
+        file.write(data)
+        file.close()
 
 schedule.every(5).seconds.do(test)
 
@@ -11,15 +21,3 @@ schedule.every(5).seconds.do(test)
 while True:
     schedule.run_pending()
     time.sleep(1)
-
-"""
-with open('main.js', 'r') as file:
-    data = file.read()
-    file.close()
-
-
-
-with open('main.js', 'w') as file:
-    file.write(data)
-    file.close()
-"""
