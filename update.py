@@ -1,6 +1,7 @@
 import schedule
 import time
 import subprocess
+import os
 
 
 def test():
@@ -8,7 +9,7 @@ def test():
         data = file.read()
         file.close()
 
-    output = subprocess.check_output(['git', 'pull', 'https://github.com/Henrikkittang/git_update', 'master'])
+    output = subprocess.Popen(['git', 'pull', 'https://github.com/Henrikkittang/git_update', 'master'])
 
     with open('main.js', 'w') as file:
         file.write(data)
