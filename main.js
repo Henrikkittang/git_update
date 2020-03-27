@@ -6,4 +6,4 @@ app.use(express.static('public'));
 app.use(express.json({limit: '1mb'}));
 
 // hmm digg
-console.log('general kanobi');
+console.log('okay');
