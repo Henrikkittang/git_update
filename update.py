@@ -15,7 +15,7 @@ def test():
         file.write(data)
         file.close()
 
-schedule.every(5).seconds.do(test)
+"""schedule.every(5).seconds.do(test)
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(1)"""
