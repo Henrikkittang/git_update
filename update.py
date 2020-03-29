@@ -5,20 +5,18 @@ import os
 
 def test():
 
-    temp = subprocess.check_output(['git', 'remote', 'show', 'https://github.com/Henrikkittang/git_update'])
-    print(temp)
+    status = subprocess.check_output(['git', 'remote', 'show', 'https://github.com/Henrikkittang/git_update']).decode('utf-8')
 
-    return
+    if('up to date' in status):
+        with open('main.js', 'r') as file:
+            data = file.read()
+            file.close()
 
-    with open('main.js', 'r') as file:
-        data = file.read()
-        file.close()
+        subprocess.Popen(['git', 'pull', 'https://github.com/Henrikkittang/git_update', 'master'])
 
-    output = subprocess.Popen(['git', 'pull', 'https://github.com/Henrikkittang/git_update', 'master'])
-
-    with open('main.js', 'w') as file:
-        file.write(data)
-        file.close()
+        with open('main.js', 'w') as file:
+            file.write(data)
+            file.close()
 
 test()
 
