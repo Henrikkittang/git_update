@@ -12,3 +12,4 @@ const jobb = schedule.scheduleJob('*/5 * * * * *', () => {
     const pyProg = spawn('python', ['update.py']);
 });
 
+console.log('star wars, the force awakens');
