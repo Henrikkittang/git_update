@@ -1,10 +1,17 @@
-import schedule
-import time
+
 import subprocess
+import git
 import os
 
-
 def test():
+
+    repo = git.Repo(os.getcwd())
+
+    print(repo.untracked_files)
+
+
+    return
+
     with open('main.js', 'r') as file:
         data = file.read()
         file.close()
@@ -17,7 +24,11 @@ def test():
 
 test()
 
-"""schedule.every(5).seconds.do(test)
+"""
+import schedule
+import time
+
+schedule.every(5).seconds.do(test)
 while True:
     schedule.run_pending()
     time.sleep(1)"""
