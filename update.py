@@ -7,7 +7,7 @@ def test():
 
     status = subprocess.check_output(['git', 'remote', 'show', 'https://github.com/Henrikkittang/git_update']).decode('utf-8')
 
-    if('up to date' in status):
+    if('up to date' not in status):
         with open('main.js', 'r') as file:
             data = file.read()
             file.close()
