@@ -5,7 +5,7 @@ import os
 
 def test():
 
-    temp = subprocess.check_output(['git', 'fetch', '--dry-run'])
+    temp = subprocess.check_output(['git', 'remote', 'show', 'https://github.com/Henrikkittang/git_update'])
     print(temp)
 
     return
