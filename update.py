@@ -5,10 +5,8 @@ import os
 
 def test():
 
-    repo = git.Repo(os.getcwd())
-
-    print(repo.untracked_files)
-
+    temp = subprocess.check_output(['git', 'fetch', '--dry-run'])
+    print(temp)
 
     return
 
