@@ -7,7 +7,7 @@ app.use(express.static('public'));
 app.use(express.json({limit: '2mb'}));
 
 // hello there, didnt see you there
-const jobb = schedule.scheduleJob('* */15 * * * *', () => {        
+const jobb = schedule.scheduleJob('*/5 * * * * *', () => {        
     const { spawn } = require('child_process');
     const pyProg = spawn('python', ['update.py']);
 });
